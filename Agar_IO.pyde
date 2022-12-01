@@ -24,7 +24,7 @@ def setup():
     fullScreen()
     background(255,255,255)
 def draw():
-    global x,y,diameter,highscore,speed,aispeed,spawn,pos,aispawn,aix,aiy,aisize,n,ain,gameover,played,matchingpositions,aimatchingpositions,aispawned,spawnpointset,reset
+    global grid,x,y,diameter,highscore,speed,aispeed,spawn,pos,aispawn,aix,aiy,aisize,n,ain,gameover,played,matchingpositions,aimatchingpositions,aispawned,spawnpointset,reset
     background(255)
     msx = mouseX
     msy = mouseY
@@ -57,7 +57,7 @@ def draw():
         fill(po[2],po[3],po[4])
         circle(po[0],po[1],10)
     fill(20,20,255)
-    # Makes the player follow th 
+    # Makes the player follow the cursor
     if gameover == False:
         if msy > y:
             y += speed
