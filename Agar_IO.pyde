@@ -13,7 +13,7 @@ aiy = 0
 aisize = 0
 n = 0
 ain = 0
-gameover = False
+gameover = True
 played = True
 matchingpositions = False
 aimatchingpositions = False
@@ -153,7 +153,11 @@ def draw():
             highscore = diameter-50
         textSize(300)
         fill(0,0,0)
-        text("GAME OVER",25,200)
+        text("AGAR.IO",25,200)
+        textSize(50)
+        text("Your blob moves by follwing the mouse \n Consume orbs to increase your size \n Avoid the red blob unitl your big enough to consume them", 25, 400)
+        textSize(100)
+        text("Press Space To Start", 25, 800)
     if diameter >= 1000:
         textSize(300)
         text("SINGULARITY ACHIEVED",25,650)   
@@ -161,5 +165,6 @@ def draw():
 def keyPressed():
     global gameover,reset,speed,diameter
     if key == " ":
-        gameover = False
-        reset = True
+        if gameover == True:
+            gameover = False
+            reset = True
